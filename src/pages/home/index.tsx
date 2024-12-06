@@ -51,6 +51,7 @@ const Home = () => {
                     <CatalogCard cards={cardData}/>
                 </div>
 
+
             </div>
         </div>
     );
