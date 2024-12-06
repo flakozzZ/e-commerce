@@ -7,7 +7,7 @@ interface LayoutProps {
 
 const DefaultLayout: React.FC<LayoutProps> = ({children}) => {
     return (
-        <div>
+        <div className='w-full max-w-[1440px] mx-auto'>
             {children}
         </div>
     );
