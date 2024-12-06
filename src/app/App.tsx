@@ -1,4 +1,4 @@
-import React, {Suspense} from "react";
+import {Suspense} from "react";
 import {Route, Routes} from "react-router-dom";
 import DefaultLayout from "@/app/layout/default.tsx";
 import Loader from "@/shared/ui/Loader/Loader.tsx";
