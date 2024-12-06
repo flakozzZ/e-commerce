@@ -21,6 +21,7 @@ const Index = () => {
                     <div className="text-[16px] text-[#BF5930] font-semibold">Регистрация</div>
                 </div>
 
+
             </div>
 
         </React.Fragment>
