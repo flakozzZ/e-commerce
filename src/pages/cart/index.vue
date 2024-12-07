@@ -1,11 +1,10 @@
 <template>
-  <div class="flex flex-col p-2" v-if="cart.length > 0">
+  <div class="flex flex-col p-2" v-if="product.length > 0">
     <div>
-      <v-table :cards="cart"/>
+      <v-table :products="product"/>
     </div>
-    <!-- Блок с условием v-if прижат вправо и расположен под таблицей -->
     <div class="md:ml-auto md:w-[470px] md:h-[324px] md:mt-8 flex flex-col justify-end"
-         v-if="cart.length > 0">
+         v-if="product.length > 0">
       <div class="border p-6">
         <div class="font-poppins text-lg font-medium text-center">{{ $t('totalCart') }}</div>
         <div class="flex justify-between items-center mt-4 font-poppins">
@@ -37,24 +36,20 @@
 </template>
 
 <script setup lang="ts">
-import { useCardStore } from "@/shared/ui/cards/index.ts";
-import { storeToRefs } from "pinia";
+import {useCardStore} from "@/shared/ui/cards/index.ts";
+import {storeToRefs} from "pinia";
 import VTable from "@/shared/ui/v-table/index.vue";
 import VButton from "@/shared/ui/button/index.vue";
-import {watch} from "vue";
-import {useI18n} from "vue-i18n";
-import axios from "axios";
 
 const store = useCardStore();
-const { cart } = storeToRefs(store);
+const { product } = storeToRefs(store);
 
 const calculateSubtotal = () => {
-  return cart.value.reduce((total, item) => total + (item.price * item.quantity), 0);
+  return product.value.reduce((total, item) => total + (item.price * item.stock), 0);
 };
 
 const calculateTotal = () => {
-  const subtotal = calculateSubtotal();
-  return subtotal;
+  return calculateSubtotal();
 };
 
 

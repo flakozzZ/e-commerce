@@ -30,9 +30,9 @@
     <div class="flex-1 mt-8 md:mt-0">
       <h2 class="text-xl md:text-2xl font-semibold mb-4 font-poppins">{{ $t('orderSummary') }}</h2>
       <div class="space-y-4">
-        <div v-for="item in cart" :key="item.id" class="flex justify-between items-center">
-          <img class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" :src="item.img" :alt="item.name">
-          <div class="flex-1 ml-2 md:ml-4 font-poppins">{{ item.name }}</div>
+        <div v-for="item in product" :key="item.id" class="flex justify-between items-center">
+          <img class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" :src="item.photo" :alt="item.title">
+          <div class="flex-1 ml-2 md:ml-4 font-poppins">{{ item.title }}</div>
           <div class="font-poppins">₸{{ item.price }}</div>
         </div>
         <div class="flex justify-between font-poppins">
@@ -58,10 +58,10 @@ import { useCardStore } from "@/shared/ui/cards/index.ts";
 import { storeToRefs } from "pinia";
 
 const store = useCardStore();
-const { cart } = storeToRefs(store);
+const { product } = storeToRefs(store);
 
 const calculateSubtotal = () => {
-  return cart.value.reduce((total, item) => total + (item.price * item.quantity), 0);
+  return product.value.reduce((total, item) => total + (item.price * item.stock), 0);
 };
 
 // Метод для динамического подсчета общей суммы (включая доставку)

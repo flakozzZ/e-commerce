@@ -7,16 +7,16 @@ export default {
 <template>
   <div v-for="card in cards" :key="card.id" class="flex flex-col md:flex-row justify-center items-center md:items-stretch mb-8 p-4">
     <div class="w-full md:w-[500px] md:h-[600px] bg-gray-100 flex justify-center items-center mb-4 md:mb-0">
-      <img class="w-full h-[400px]" :src="card.img" alt="Product Image">
+      <img class="w-full h-[400px]" :src="card.photo" alt="Product Image">
     </div>
     <div class="w-full md:w-[600px] mx-auto md:ml-8">
-      <div class="font-inter text-xl md:text-2xl font-semibold text-center md:text-left mb-4">{{ card.name }}</div>
+      <div class="font-inter text-xl md:text-2xl font-semibold text-center md:text-left mb-4">{{ card.title }}</div>
       <div class="flex gap-1 justify-center md:justify-start items-center mb-4">
         <template v-for="star in 5" :key="star">
           <v-icon :name="getStarIcon(card.rating, star)" class="text-[#F59E0B]"/>
         </template>
         <div class="flex items-center md:ml-4">
-          <div class="font-poppins text-xs text-gray-500">{{ card.count }} {{ $t('reviews') }}</div>
+          <div class="font-poppins text-xs text-gray-500">{{ card.stock }} {{ $t('reviews') }}</div>
           <div class="mx-2">|</div>
           <div class="text-[#00FF66] font-poppins text-sm">{{ $t('inStock') }}</div>
         </div>
@@ -83,18 +83,11 @@ import { ref } from "vue";
 import VButton from "@/shared/ui/button/index.vue";
 import {useCardStore} from "@/shared/ui/cards/index.ts";
 import {useRouter} from "vue-router";
+import {ProductTypes} from "@/app/types/ProductTypes.ts";
 
-interface ICard {
-  img: any
-  name: string
-  price: number
-  description: string
-  rating: number
-  count: number
-}
 
 interface Props {
-  cards: ICard[]
+  cards: ProductTypes[]
 }
 
 withDefaults(defineProps<Props>(), {})
@@ -125,7 +118,7 @@ const decreaseQuantity = () => {
   }
 };
 
-const calculatedPrice = (card: ICard) => {
+const calculatedPrice = (card) => {
   return (card.price * quantity.value).toFixed(2);
 }
 

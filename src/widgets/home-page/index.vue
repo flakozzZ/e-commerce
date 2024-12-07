@@ -23,6 +23,8 @@ import axios from "axios";
 import {useI18n} from "vue-i18n";
 import {ref, onMounted, computed, watch} from "vue";
 import axiosInstance from "@/app/providers/axios.ts";
+import {CategoriesType} from "@/app/types/CategoryTypes.ts";
+import {ProductTypes} from "@/app/types/ProductTypes.ts";
 
 interface ICarousel {
   logo: string;
@@ -63,11 +65,11 @@ watch(() => locale.value, () => {
   fetchCarouselAndCardItems();
 });
 
-const products = ref([]);
-const categories = ref([]);
+const products = ref<ProductTypes[]>([]);
+const categories = ref<CategoriesType[]>([]);
 const fetchCategories = async () => {
   try {
-    const response = await axiosInstance.get<CategoryType[]>('/v1/store/category/get-all/');
+    const response = await axiosInstance.get<CategoriesType[]>('/v1/store/category/get-all/');
     categories.value = response.data;
     return response.data;
   } catch (error) {
@@ -76,7 +78,7 @@ const fetchCategories = async () => {
   }
 };
 
-const fetchProductsByCategories = async (fetchedCategories) => {
+const fetchProductsByCategories = async (fetchedCategories: CategoriesType[]) => {
   try {
     const allProducts = [];
     for (const category of fetchedCategories) {

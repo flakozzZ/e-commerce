@@ -1,13 +1,13 @@
-import { defineStore } from "pinia";
-import { ICards } from "@/shared/ui/cards/index.vue";
+import {defineStore} from "pinia";
+import {ProductTypes} from "@/app/types/ProductTypes.ts";
 
 export const useCardStore = defineStore('main', {
     state: () => ({
-        favoriteCards: [] as ICards[],
-        cart: [] as ICards[]
+        favoriteCards: [] as ProductTypes[],
+        product: [] as ProductTypes[]
     }),
     actions: {
-        toggleFavorite(card: ICards) {
+        toggleFavorite(card: ProductTypes) {
             const index = this.favoriteCards.findIndex(favorite => favorite.id === card.id);
             if (index !== -1) {
                 this.favoriteCards.splice(index, 1);
@@ -15,29 +15,29 @@ export const useCardStore = defineStore('main', {
                 this.favoriteCards.push(card);
             }
         },
-        isFavorite(card: ICards) {
+        isFavorite(card: ProductTypes) {
             return this.favoriteCards.some(favorite => favorite.id === card.id);
         },
 
-        addToCart(card: ICards) {
-            const existingCardIndex = this.cart.findIndex(c => c.name === card.name);
+        addToCart(card: ProductTypes) {
+            const existingCardIndex = this.product.findIndex(c => c.title === card.title);
             if (existingCardIndex !== -1) {
-                this.cart[existingCardIndex].quantity++;
+                this.product[existingCardIndex].stock++;
             } else {
                 // Добавляем новую карточку в корзину с начальным количеством 1
-                this.cart.push({ ...card, quantity: 1 });
+                this.product.push({ ...card, stock: 1 });
             }
         },
-        removeFromCard(card: ICards) {
-            const index = this.cart.findIndex(item => item.id === card.id);
+        removeFromCard(card: ProductTypes) {
+            const index = this.product.findIndex(item => item.id === card.id);
             if (index !== -1) {
-                const item = this.cart[index];
-                if (item.quantity > 1) {
+                const item = this.product[index];
+                if (item.stock > 1) {
                     // Если количество больше 1, уменьшаем на 1
-                    item.quantity--;
+                    item.stock--;
                 } else {
                     // В противном случае удаляем товар из корзины
-                    this.cart.splice(index, 1);
+                    this.product.splice(index, 1);
                 }
             }
         }

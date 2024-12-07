@@ -14,7 +14,7 @@ export default {
                     :fill="favorite(card) ? 'red' : 'white'"/>
           </div>
           <div class="w-[34px] h-[34px] rounded-full bg-white flex justify-center items-center">
-            <RouterLink :to="`product/${card.id}`">
+            <RouterLink :to="`/category/${card.category.slug}/product/${card.slug}`">
               <v-icon class="cursor-pointer" name="eye"/>
             </RouterLink>
           </div>
@@ -27,13 +27,9 @@ export default {
         </div>
       </div>
       <div class="font-poppins text-base uppercase mt-2 font-medium">
-        {{ card.name }}
+        {{ card.title }}
       </div>
-      <div class="flex gap-4 mt-2" v-if="card.discount">
-        <span class="text-red-500 font-poppins text-base font-medium">₸{{ card.price }}</span>
-        <span class="line-through font-poppins text-base font-medium text-gray-500">₸{{ card.originalPrice }}</span>
-      </div>
-      <div class="mt-2 text-red-500 font-poppins text-base font-medium" v-else>
+      <div class="mt-2 text-red-500 font-poppins text-base font-medium">
         ₸{{ card.price }}
       </div>
 
@@ -41,7 +37,7 @@ export default {
         <template v-for="star in 5" :key="star">
           <v-icon :name="getStarIcon(card.rating, star)"/>
         </template>
-        <div class="font-poppins text-xs text-gray-500 ml-2 mt-1">({{ (card.count) }})</div>
+        <div class="font-poppins text-xs text-gray-500 ml-2 mt-1">({{ (card.stock) }})</div>
       </div>
 
     </div>
@@ -51,32 +47,18 @@ export default {
 <script setup lang="ts">
 import VIcon from "@/shared/ui/v-icon/index.vue";
 import VButton from "@/shared/ui/button/index.vue";
-import { useCardStore } from "@/shared/ui/cards/index.ts";
+import {useCardStore} from "@/shared/ui/cards/index.ts";
 import "@/shared/ui/cards/index.vue";
-import VueToast from "vue-toast-notification";
 import {toast} from "@/app/providers/toast.ts";
 import {useI18n} from "vue-i18n";
-import {i18n} from "@/app/providers/i18n.ts";
-
-export interface ICards {
-  id?: number
-  img?: any
-  name?: string
-  price?: string
-  originalPrice?: string
-  discount?: number
-  rating?: number
-  count?: number
-  isFavorite?: boolean  // новое свойство для отслеживания избранного
-}
-
+import {ProductTypes} from "@/app/types/ProductTypes.ts";
 
 interface Props {
-  cards: ICards[]
+  cards: ProductTypes[]
 }
 
 const store = useCardStore()
-const { toggleFavorite, isFavorite, addToCart } = store
+const {toggleFavorite, isFavorite, addToCart} = store
 
 withDefaults(defineProps<Props>(), {})
 
