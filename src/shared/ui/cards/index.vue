@@ -6,8 +6,8 @@ export default {
 
 <template>
   <div class="flex flex-auto flex-wrap gap-24 p-3">
-    <div class="w-[270px] h-[350px]" v-for="card in cards" :key="card.id">
-      <div class="relative w-[270px] h-[250px] bg-[#F5F5F5] flex justify-center items-center group">
+    <div class="w-[270px] h-[350px]" v-for="card in cards" :key="card.slug">
+      <div class="relative w-[270px] h-[250px]  flex justify-center items-center group">
         <div class="absolute top-2 right-2 flex flex-col gap-y-2 ">
           <div class="w-[34px] h-[34px] rounded-full bg-white flex justify-center items-center">
             <v-icon @click="handleFavorite(card)" class="cursor-pointer" name="favorites"
@@ -62,7 +62,7 @@ const {toggleFavorite, isFavorite, addToCart} = store
 
 withDefaults(defineProps<Props>(), {})
 
-const handleFavorite = (card) => {
+const handleFavorite = (card: ProductTypes) => {
   toggleFavorite(card)
 }
 

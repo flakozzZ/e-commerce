@@ -8,7 +8,7 @@ export const useCardStore = defineStore('main', {
     }),
     actions: {
         toggleFavorite(card: ProductTypes) {
-            const index = this.favoriteCards.findIndex(favorite => favorite.id === card.id);
+            const index = this.favoriteCards.findIndex(favorite => favorite.slug === card.slug);
             if (index !== -1) {
                 this.favoriteCards.splice(index, 1);
             } else {
@@ -16,7 +16,7 @@ export const useCardStore = defineStore('main', {
             }
         },
         isFavorite(card: ProductTypes) {
-            return this.favoriteCards.some(favorite => favorite.id === card.id);
+            return this.favoriteCards.some(favorite => favorite.slug === card.slug);
         },
 
         addToCart(card: ProductTypes) {
