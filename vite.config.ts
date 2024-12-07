@@ -1,13 +1,19 @@
 import {defineConfig} from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import * as path from 'path'
-
-// https://vite.dev/config/
+import vue from '@vitejs/plugin-vue'
+import svgLoader from 'vite-svg-loader'
+import {fileURLToPath} from "url";
+import {URL} from "node:url";
+// https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react()],
     resolve: {
+        extensions: ["*", ".js", ".ts", ".vue", ".json"],
         alias: {
-            '@': path.resolve(__dirname, 'src'),
+            "@": fileURLToPath(new URL("./src", import.meta.url))
         }
-    }
+    },
+    plugins: [vue({
+        script: {
+            defineModel: true
+        }
+    }), svgLoader()],
 })

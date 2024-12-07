@@ -1,13 +1,16 @@
-const flowbite = require("flowbite-react/tailwind");
-
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: [
-        "./src/**/*.{js,jsx,ts,tsx}",
-        flowbite.content(),
-    ],
-    plugins: [
-        // ...
-        flowbite.plugin(),
-    ],
-};
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'poppins': ["Poppins", "sans-serif"],
+        'inter': ["Inter", "sans-serif"]
+      }
+    },
+  },
+  plugins: [],
+}

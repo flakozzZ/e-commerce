@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "home": "Home",
+    "contact": "Contact",
+    "about": "About",
+    "electronics": "Electronics"
+  },
+  "placeholder": "What are you looking for?",
+  "our_history": {
+    "title": "Our History",
+    "description": "Launched in 2015, Exclusive is a leading online marketplace in South Asia with an active presence in Bangladesh. Supported by a wide range of personalized marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands, serving 3 million customers in the region.",
+    "offer": "Exclusive offers over 1 million products, growing rapidly. Exclusive's assortment includes various categories of products, from consumer electronics to home goods."
+  },
+  "products": [
+    {
+      "id": 1,
+      "img": "../src/shared/assets/icons/joy.svg",
+      "name": "HAVIT HV-G92 Gamepad",
+      "discount": 40,
+      "price": 53760,
+      "originalPrice": 71680,
+      "rating": 5,
+      "count": 88,
+      "description": "Enjoy gaming sessions with the HAVIT HV-G92 Gamepad. With its ergonomic design and precise controls, it provides a comfortable and immersive gaming experience. Plus, with a 40% discount, it's a great deal!"
+    },
+    {
+      "id": 2,
+      "img": "../src/shared/assets/icons/product1.svg",
+      "name": "Wired Keyboard AK-900",
+      "discount": 35,
+      "price": 26880,
+      "originalPrice": 51968,
+      "rating": 4,
+      "count": 120,
+      "description": "The AK-900 Wired Keyboard offers reliable performance and responsive keys for your typing needs. With a 35% discount, it's an affordable choice for both gamers and professionals."
+    },
+    {
+      "id": 3,
+      "img": "../src/shared/assets/icons/product2.svg",
+      "name": "Gaming Monitor IPS LCD",
+      "discount": 30,
+      "price": 165760,
+      "originalPrice": 179200,
+      "rating": 4.5,
+      "count": 24,
+      "description": "Immerse yourself in stunning visuals with the Gaming Monitor IPS LCD. With high-quality display and fast response times, it's perfect for gamers. And with a 30% discount, it's a great offer!"
+    },
+    {
+      "id": 4,
+      "img": "../src/shared/assets/icons/product3.svg",
+      "name": "Liquid RGB CPU Cooler",
+      "price": 71680,
+      "rating": 3.5,
+      "count": 32,
+      "description": "Keep your CPU cool and running smoothly with the Liquid RGB CPU Cooler. Its efficient cooling system and colorful RGB lighting add style to your PC."
+    },
+    {
+      "id": 5,
+      "img": "../src/shared/assets/icons/product4.svg",
+      "name": "Canon EOS DSLR Mirrorless Camera",
+      "price": 161280,
+      "rating": 2,
+      "count": 23,
+      "description": "Capture stunning photos and videos with the Canon EOS DSLR Mirrorless Camera. Its advanced features and high-quality lens make it an ideal choice for photography enthusiasts."
+    },
+    {
+      "id": 6,
+      "img": "../src/shared/assets/icons/product5.svg",
+      "name": "GP11 Shooter USB Gamepad",
+      "price": 44800,
+      "rating": 1,
+      "count": 2,
+      "description": "Get ready for intense gaming action with the GP11 Shooter USB Gamepad. Its ergonomic design and responsive buttons provide precise control, and its affordable price makes it an excellent choice."
+    },
+    {
+      "id": 7,
+      "img": "../src/shared/assets/icons/product6.svg",
+      "name": "ASUS FHD Gaming Laptop",
+      "price": 519680,
+      "rating": 4.5,
+      "count": 123,
+      "description": "Experience smooth gaming performance with the ASUS FHD Gaming Laptop. With powerful hardware and a high-resolution display, it's perfect for gamers on the go."
+    },
+    {
+      "id": 8,
+      "img": "../src/shared/assets/icons/product7.svg",
+      "name": "Havic HV G-92 Controller Skin",
+      "price": 86016,
+      "rating": 3,
+      "count": 89,
+      "description": "PlayStation 5 controller skin made of high-quality vinyl with adhesive layer with air channels for easy installation without bubbles and clean removal without waste. Pressure sensitive."
+    }
+  ],
+  "carousel": [
+    {
+      "id": 1,
+      "logo": "apple-logo",
+      "name": "iPhone 11 Series",
+      "description": "Up to 20% off Voucher",
+      "img": "../src/shared/assets/img/iphone.png"
+    },
+    {
+      "id": 2,
+      "logo": "apple-logo",
+      "name": "iPhone 12 Series",
+      "description": "Up to 30% off Voucher",
+      "img": "../src/shared/assets/img/iphone.png"
+    },
+    {
+      "id": 3,
+      "logo": "apple-logo",
+      "name": "iPhone 14 Series",
+      "description": "Up to 40% off Voucher",
+      "img": "../src/shared/assets/img/iphone.png"
+    },
+    {
+      "id": 4,
+      "logo": "apple-logo",
+      "name": "iPhone 16 Series",
+      "description": "Up to 50% off Voucher",
+      "img": "../src/shared/assets/img/iphone.png"
+    }
+  ],
+  "all_products": "All Products",
+  "today_products": "Today",
+  "shop": "Show now",
+  "freeShippingTitle": "Free Shipping",
+  "freeShippingText": "Enter your postal code to check for delivery availability",
+  "returnPolicyTitle": "Return Policy",
+  "returnPolicyText": "Free returns within 30 days",
+  "reviews": "Reviews",
+  "inStock": "In Stock",
+  "addToCart": "Add to cart",
+  "image": "Image",
+  "product": "Product",
+  "quantity": "Quantity",
+  "price": "Price",
+  "action": "Action",
+  "decreaseQuantity": "Decrease quantity",
+  "increaseQuantity": "Increase quantity",
+  "delete": "Delete",
+  "totalCart": "Total in Cart",
+  "subtotal": "Subtotal",
+  "shipping": "Shipping",
+  "free": "free",
+  "total": "Total",
+  "proceedToCheckout": "Proceed to Checkout",
+  "emptyCart": "Your cart is empty. Add something.",
+  "checkoutTitle": "Checkout",
+  "name": "Name",
+  "email": "Email",
+  "address": "Address",
+  "paymentMethod": "Payment Method",
+  "bankTransfer": "Bank Transfer",
+  "cash": "Cash",
+  "placeOrder": "Place Order",
+  "orderSummary": "Order Summary",
+  "favorites": "Favorites",
+  "emptyFavorites": "Favorites are empty. Add something.",
+  "contactUs": "Call Us",
+  "contactAvailability": "We are available 24/7, 7 days a week.",
+  "phoneNumber": "Phone",
+  "writeToUs": "Write to Us",
+  "writeToUsDescription": "Fill out our form and we'll get back to you within 24 hours.",
+  "emailAddress": "Email",
+  "supportEmailAddress": "Support Email",
+  "yourName": "Your Name",
+  "yourEmail": "Your Email",
+  "yourPhone": "Your Phone",
+  "yourMessage": "Your Message",
+  "sendMessage": "Send Message",
+  "success": "Product successfully added to cart"
+}
