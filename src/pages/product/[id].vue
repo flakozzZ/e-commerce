@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-row justify-center items-center md:items-stretch mb-8 p-4">
     <div class="w-full md:w-[500px] md:h-[600px] bg-gray-100 flex justify-center items-center mb-4 md:mb-0">
-      <img class="w-full h-[400px]" :src="product.photo" alt="Product Image">
+      <img class="w-full" :src="product.photo" alt="Product Image">
     </div>
     <div class="w-full md:w-[600px] mx-auto md:ml-8">
       <div class="font-inter text-xl md:text-2xl font-semibold text-center md:text-left mb-4">{{ product.title }}</div>
